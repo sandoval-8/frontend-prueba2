@@ -1,0 +1,17 @@
+nav {
+    background-color: rgb(245, 245, 245);
+    display: flex;
+/*    justify-content: center; */
+    align-items: center;
+    margin-bottom: 0;
+}
+router-outlet {
+    width: 600px;
+    height: 600px;
+}
+app-index {
+    background-color: rgb(148, 163, 230);
+}
+app-index .container1{
+    background-color: rgb(148, 163, 230);
+}
