@@ -5,29 +5,25 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListarComponent } from './Personal/listar/listar.component';
-import { AddComponent } from './Personal/add/add.component';
-import { EditComponent } from './Personal/edit/edit.component';
-import { ServiceService } from '../app/Service/service.service';
 import { AsideCentrosComponent } from './index/aside-centros/aside-centros.component';
 import { IndexComponent } from './index/index.component';
+import { TablePersonasComponent } from './index/table-personas/table-personas.component';
+import { ServiceTableService } from './index/table-personas/service/service-table.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarComponent,
-    AddComponent,
-    EditComponent,
     AsideCentrosComponent,
-    IndexComponent
+    IndexComponent,
+    TablePersonasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [ServiceService],
+  providers: [ServiceTableService, TablePersonasComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

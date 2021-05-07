@@ -3,7 +3,7 @@
     <div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item" *ngFor="let centro of centros">
-                <button (click)="evento(centro.nombre)">{{centro.nombre}}</button>
+                <button (click)="evento(centro.id)">{{centro.nombre}}</button>
             </li>
         </ul>
     </div>

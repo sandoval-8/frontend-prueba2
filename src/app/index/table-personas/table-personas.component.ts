@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/Modelo/Persona';
-import { ServiceService } from 'src/app/Service/service.service';
+import { ServiceTableService } from './service/service-table.service'
 
 @Component({
-  selector: 'app-listar',
-  templateUrl: './listar.component.html',
-  styleUrls: ['./listar.component.css']
+  selector: 'app-table-personas',
+  templateUrl: './table-personas.component.html',
+  styleUrls: ['./table-personas.component.css']
 })
-export class ListarComponent implements OnInit {
+export class TablePersonasComponent implements OnInit {
 
   personas:Persona[];
-  constructor(private service:ServiceService, private router:Router) { }
+  constructor(private service:ServiceTableService, private router:Router) { }
 
   ngOnInit(): void {
     this.service.getPersonas()
@@ -23,5 +23,8 @@ export class ListarComponent implements OnInit {
     localStorage.setItem("id", Persona2.id.toString());
     this.router.navigate(["edit"]);
   }
+/*  cargarTabla(personas:Persona[]):void{
+    this.personas=personas;
+  } */
 
 }

@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
-import {Persona} from '../Modelo/Persona'
+import {Persona} from '../../../Modelo/Persona'
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class ServiceTableService {
 
   persona:Persona[];
 
   constructor(private http:HttpClient) { }
 
-  urlPerson:string='http://localhost:8080/personas';
+  urlPerson:string='http://localhost:8080/user';
 
   getPersonas(){
-    return this.http.get<Persona[]>(this.urlPerson);
+    return this.http.get<Persona[]>(this.urlPerson + "/userAll");
   }
   //-------------------------------------------------------
   getPersonasForCentro(){
