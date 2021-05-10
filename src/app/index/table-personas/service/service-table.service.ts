@@ -18,8 +18,8 @@ export class ServiceTableService {
     return this.http.get<Persona[]>(this.urlPerson + "/userAll");
   }
   //-------------------------------------------------------
-  getPersonasForCentro(){
-    return this.http.get<Persona[]>(this.urlPerson);
+  getPersonasForCentro(id:string){
+    return this.http.post<Persona[]>(this.urlPerson + "/forCentro",{"id":id});
   }
   //-------------------------------------------------------
   createPersona(persona:Persona){

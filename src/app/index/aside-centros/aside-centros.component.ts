@@ -26,12 +26,7 @@ export class AsideCentrosComponent implements OnInit {
   }
 
   evento(id:string):void {
-    console.log(id);
-    this.service.getPersonasForCentro(id)
-    .subscribe(data=>{
-  /*    this.tabla.cargarTabla(data); */
-      console.log(data);
-    });
+    this.tabla.cargarTabla(id); 
   }
 
 }

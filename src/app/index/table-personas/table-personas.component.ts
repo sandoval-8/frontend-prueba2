@@ -10,21 +10,25 @@ import { ServiceTableService } from './service/service-table.service'
 })
 export class TablePersonasComponent implements OnInit {
 
-  personas:Persona[];
-  constructor(private service:ServiceTableService, private router:Router) { }
+  public personas: Persona[];
+
+  constructor(private service: ServiceTableService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.getPersonas()
-    .subscribe(data=>{
-      this.personas=data;
-    })
+      .subscribe(data => {
+        this.personas = data;
+      }) 
   }
-  Editar(Persona2:Persona):void{
+  cargarTabla(id: string): void {
+    this.service.getPersonasForCentro(id)
+      .subscribe(data => {
+        this.personas = data;
+      });
+      console.log(this.personas[2]);
+  }
+/*  Editar(Persona2: Persona): void {
     localStorage.setItem("id", Persona2.id.toString());
     this.router.navigate(["edit"]);
-  }
-/*  cargarTabla(personas:Persona[]):void{
-    this.personas=personas;
   } */
-
 }
