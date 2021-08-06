@@ -1,7 +1,7 @@
+<app-modal></app-modal>
 <nav class="navbar navbar-light bg-light">
-  <div class="container">
-    <button (click)="Listar()" class="btn btn-info">Listar</button>
-    <button (click)="Nuevo()" class="btn btn-info">Nuevo</button>
+  <div class="container" id="navContainer">
+    <button *ngIf='loginService.isAuthenticated()' (click)="logout()" class="btn btn-info" id="logout">Cerrar Sesion</button>
   </div>
 </nav>
 <router-outlet></router-outlet>

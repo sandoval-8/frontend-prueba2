@@ -1,0 +1,12 @@
+<div class="modal-principal" [class.isDisabled]="isDisabled" [ngClass]="{'activado': isActivated, 'desactivado': !isActivated}">
+    <div class="contenedorModal">
+        <div class="header">
+            <div>sdfsdfs</div>
+            <div><button class="btn btn-closed" (click)="modal()" aria-modal="true">&times;</button></div>
+        </div>
+        <hr>
+        <div class="body">dsfdfsdf</div>
+        <div class="footer">sdfdsfsdf</div>
+    </div>
+</div>
+<button class="btn btn-success" (click)="modal()">abrir modal</button>

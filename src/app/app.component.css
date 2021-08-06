@@ -5,13 +5,7 @@ nav {
     align-items: center;
     margin-bottom: 0;
 }
-router-outlet {
-    width: 600px;
-    height: 600px;
-}
-app-index {
-    background-color: rgb(148, 163, 230);
-}
-app-index .container1{
-    background-color: rgb(148, 163, 230);
+#navContainer {
+    display: flex;
+    justify-content: flex-end;
 }

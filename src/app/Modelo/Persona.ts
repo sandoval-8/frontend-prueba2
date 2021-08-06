@@ -1,11 +1,24 @@
+import { Centro } from './Centro'
 export class Persona {
     id: number;
-    name: string;
+    legajo:string;
+    nombre: string;
     apellidos: string;
+    funcion:string;
+    domicilio:string;
+    oficina:string;
+    horario:string;
+    centro: Centro;
 
-    public Persona(id:number, name:string, apellidos:string){
+    constructor(id:number, legajo:string, nombre:string, apellidos:string,
+        funcion:string, domicilio:string, oficina:string, horario:string){
         this.id=id;
-        this.name=name;
+        this.legajo=legajo
+        this.nombre=nombre;
         this.apellidos=apellidos;
+        this.funcion=funcion;
+        this.domicilio=domicilio;
+        this.oficina=oficina;
+        this.horario=horario;
     }
 }

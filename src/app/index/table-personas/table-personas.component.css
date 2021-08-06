@@ -1,6 +1,50 @@
+* {
+    box-sizing: border-box;
+}
 th {
     text-align: center;
 }
 td {
     text-align: center;
+}
+/*#################################*/
+.contenedor{
+    display: flex;
+    float: left;
+    width: 100vw;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: darkgreen;
+}
+.aside-centros{
+    margin: 0px;
+    padding-left: 0px;
+    width: 15vw;
+    background-color: rgb(220, 226, 226);    
+}
+aside {
+    width: 200px;
+}
+aside a {
+    text-decoration: none;
+    color: rgb(212, 212, 212);
+}
+aside button {
+    text-decoration: none;
+    color: dimgrey;
+    border: none;
+    background-color: #FFFFFF;
+}
+.cont-central{
+    margin: 0px;
+    width: 85vw;
+    background-color: rgb(236, 236, 236);
+}
+.active button{
+    background-color: #337AB7;
+    color: black;
+}
+.btn-danger {
+    margin-left: 10px;
 }

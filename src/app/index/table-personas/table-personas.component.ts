@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { Persona } from 'src/app/Modelo/Persona';
-import { ServiceTableService } from './service/service-table.service'
+import { ServiceTableService } from './service/service-table.service';
+import { Centro } from 'src/app/Modelo/Centro';
 
 @Component({
   selector: 'app-table-personas',
@@ -10,25 +13,30 @@ import { ServiceTableService } from './service/service-table.service'
 })
 export class TablePersonasComponent implements OnInit {
 
-  public personas: Persona[];
+  centroSelect:string;
+  centros:Centro[];
+  personas: Persona[];
 
-  constructor(private service: ServiceTableService, private router: Router) { }
+  constructor(private service: ServiceTableService, private router: Router, public modal:NgbModal) { }
 
   ngOnInit(): void {
-    this.service.getPersonas()
-      .subscribe(data => {
-        this.personas = data;
-      }) 
+    this.service.getCentros()
+    .subscribe(data=>{
+      this.centros=data;
+      console.log(this.centros);
+    });
   }
-  cargarTabla(id: string): void {
-    this.service.getPersonasForCentro(id)
+  listPerson(numero:string){
+    this.centroSelect=numero;
+    this.service.getPersonasForCentro(numero)
       .subscribe(data => {
         this.personas = data;
       });
-      console.log(this.personas[2]);
   }
-/*  Editar(Persona2: Persona): void {
-    localStorage.setItem("id", Persona2.id.toString());
-    this.router.navigate(["edit"]);
-  } */
+  editarPersona(Persona2: Persona): void {
+    
+  } 
+  borrarPersona(){
+
+  }
 }
